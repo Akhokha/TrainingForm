@@ -1,0 +1,7 @@
+.conf {
+  display: flex;
+  float: right;
+  text-align: center;
+  justify-content: flex-end;
+  overflow: scroll;
+}

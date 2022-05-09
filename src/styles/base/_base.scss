@@ -1,0 +1,44 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; // 1rem =10px => 10/16px=62.5
+  @include Respond(tab-land) {
+    font-size: 56.25%;
+  }
+  @include Respond(tab-port) {
+    font-size: 50%;
+  }
+  @include Respond(big-desktop) {
+    font-size: 75%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 2rem;
+  @include Respond(tab-land) {
+    padding: 0;
+  }
+}
+// GRID
+.container {
+  display: grid;
+  grid-template-rows: 96vh;
+  grid-template-columns:
+    [full-start]minMax(6rem, 1fr) [center-start]repeat(
+      8,
+      [col-start] minmax(min-content, 14rem) [col-end]
+    )
+    [center-end] minmax(6rem, 1fr) [full-end];
+}
+
+::selection {
+  background-color: orange;
+  color: aliceblue;
+}
